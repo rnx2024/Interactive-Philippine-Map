@@ -1,12 +1,14 @@
-# Create a Philippine map with tourist spots and tooltip
 library(leaflet)
 library(htmltools)
 
 # Create a data frame with the locations, coordinates, and descriptions
 tourist_spots <- data.frame(
-  place = c("Palawan", "Vigan", "Intramuros", "Siargao", "Boracay", "Chocolate Hills", "Camiguin"),
-  lat = c(9.8349, 17.5748, 14.5897, 9.8667, 11.9685, 9.8223, 9.1000),
-  lng = c(118.7388, 120.3873, 120.9738, 126.0500, 121.9248, 124.1756, 124.7000),
+  place = c("Palawan", "Vigan", "Intramuros", "Siargao", "Boracay", "Chocolate Hills", "Camiguin", 
+            "Hundred Islands", "Banaue Rice Terraces", "Sagada", "Batanes", "Siquijor"),
+  lat = c(9.8349, 17.5748, 14.5897, 9.8667, 11.9685, 9.8223, 9.1000, 
+          16.1925, 16.9310, 17.0830, 20.4474, 9.2086),
+  lng = c(118.7388, 120.3873, 120.9738, 126.0500, 121.9248, 124.1756, 124.7000, 
+          120.0156, 121.0830, 120.9000, 121.9687, 123.5076),
   description = c(
     "Known for its stunning beaches,<br>crystal-clear waters, and the famous<br>Puerto Princesa Underground River.",
     "A well-preserved Spanish colonial town,<br>famous for its historic architecture and<br>cobblestone streets.",
@@ -14,7 +16,12 @@ tourist_spots <- data.frame(
     "A surfer's paradise known for its<br>world-class waves, beautiful beaches,<br>and vibrant island culture.",
     "Famed for its powdery white sand beaches<br>and crystal-clear waters, a top beach destination.",
     "A geological formation of over a thousand<br>chocolate-colored hills, an iconic natural wonder.",
-    "Known as the 'Island Born of Fire',<br>Camiguin is famous for its volcanoes,<br>hot springs, and sweet lanzones fruit."
+    "Known as the 'Island Born of Fire',<br>Camiguin is famous for its volcanoes,<br>hot springs, and sweet lanzones fruit.",
+    "Known for its 124 islets and abundant<br>marine life, perfect for island hopping<br>and water activities.",
+    "Often called the 'Eighth Wonder of the World',<br>these ancient rice terraces are a breathtaking sight.",
+    "Famous for its hanging coffins, caves,<br>and beautiful landscapes.",
+    "A group of islands with stunning scenery<br>and a unique culture.",
+    "Known as the 'Island of Healing',<br>famous for its mystical charm and beautiful beaches."
   )
 )
 
@@ -38,4 +45,3 @@ for (i in 1:nrow(tourist_spots)) {
 
 # Display the map
 map
-
